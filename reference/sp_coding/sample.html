@@ -1,0 +1,178 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<meta name="viewport" contnt="width=device-width, initial-scale=1, maximum-scale=1", user-scalable="0"/>
+<meta http-equiv="content-language" content="ja" />
+<meta http-equiv="content-style-type" content="text/css" />
+<meta http-equiv="content-script-type" content="text/javascript" />
+<link href="css/reset.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="css/sample.css" media="screen" rel="stylesheet" type="text/css" />
+<title></title>
+</head>
+
+<body>
+<section class="commentary">
+	<h1>1: PCのコーディングとの違い</h1>
+	<section class="box_outline">
+		<h2 class="subttl">[ スマホコーディングの特徴 ]</h2>
+		<ul>
+			<li>・画像の使用は必要最低限にし、cssで実装できるところはcssを使うことで、極力ページサイズを小さくする。</li>
+			<li>・ 縦位置（ポートレイト）と横位置（ランドスケープ）の両方を考慮する。</li>
+			<li>・画像のファイルサイズ=1画像2MBという制限がある（一応）</li>
+			<li>・retina対応させるので、デザインデータを2倍の大きさで制作する必要がある。</li>
+		</ul>
+		<p>（今回はCanvasやSVGは使用していないので、そのあたりは割愛します。）</p>
+	</section>
+	<section class="box_outline">
+		<h2 class="subttl">[ viewportの設定 ]</h2>
+		<div class="box">
+			<h3>＊ width=device-width</h3>
+			<p class="txt">200～10000pxの範囲で設定できる。</br>windowサイズに合わせて可変したいので、device-widthを指定する。</br>デフォルト値は980pxなので、指定しておかないとPCサイトのような表示になってしまいます。</p>
+		</div>
+		<div class="box">
+			<h3>＊ initial-scale=1</h3>
+			<p class="txt">最初にページを表示したときのズーム率。</br>100%＝1.0として指定します。</p>
+		</div>
+		<div class="box">
+			<h3>＊ maximum-scale=1</h3>
+			<p class="txt">最大ズーム率。100%＝1.0として指定します。</br>デフォルト値は1.6</p>
+		</div>
+		<div class="box">
+			<h3>＊ user-scalable="0"</h3>
+			<p class="txt">拡大・縮小を有効にするかどうか。デフォルト値はオンになっているので、</br>無効にしたい場合は0かnoを指定する。
+			</p>
+		</div>
+	</section>
+</section><!--commentary-->
+
+
+<section class="tips">
+	<h1>2: スマホコーディングで使える便利なcss</h1>
+	<p>スマホコーディングでよく使う、便利なcssをまとめました。</br>うまく使えば、カスタマイズ・修正しやすく、効率よくコーディングでき、作業負担をかなり軽減できます。</p>
+	<section class="navi example">
+		<h2>display_table</h2>
+		<ul>
+			<li>・floatを使わなくてもこれだけで横並びのナビゲーションが作れる。</li>
+			<li>・各ボタンの比率を同じままウィンドウサイズに合わせて可変させられる。</li>
+		</ul>
+		<nav class="sample_1">
+			<ul>
+				<li class="menu"><a href="">menu</a></li>
+				<li class="gallery"><a href="">gallery</a></li>
+				<li class="contact"><a href="">contact</a></li>
+			</ul>
+		</nav>
+	</section>
+
+	<section class="boxsizing example">
+		<h2>box-sizing</h2>
+		<p>・paddingやborderの数値をwidthに含めてくれるので、従来のようにwidthからpaddingを引くなどの計算をしなくてすむ。</p>
+		<div class="sample_1">
+			<p>box-sixingはとても便利です。</p>
+		</div>
+	</section>
+
+	<section class="rounded_corners example">
+		<h2>border-radius</h2>
+		<p>HTML5からは、&lt;a&gt;もボックス要素として扱えるようになったので、今までのように&lt;div&gt;などで囲んだ後、ボタン全体がクリッカブルになるようにする必要がなく、&lt;a&gt;～&lt;/a&gt;の中に&lt;p&gt;や&lt;span&gt;が複数入るような構造にできる。</p>
+		<a class="sample_1" href="">ボタン</a>
+		<a class="sample_2" href="">ボタン</a>
+		<a class="sample_3" href="">ボタン</a>
+	</section><!--rounded_corners-->
+
+	<section class="shadow example">
+		<h2>box-shadow</h2>
+		<div class="sample_1"></div>
+		<div class="sample_2"></div>
+		<div class="sample_3"></div>
+	</section><!--shadow-->
+</section>
+
+<section class="notes">
+	<h1>3: 注意点</h1>
+	<section>
+		<h2>[ 画像サイズ ]</h2>
+		<p>画像を書き出す際、数値が奇数だとエッジがぼけたりすることがあるので、サイズは偶数にしておく方が無難。</br>（写真などだけに限らず、アイコンや見出しの画像なども同様。）</p>
+	</section>
+	<section>
+		<h2>[ retina対応 ]</h2>
+		<p>2倍のデータを見ていると大きく見えますが、実際の表示はそれの1/4になるので、コーディング完了後ブラウザで見ると、想定していたより小さくなることがあります。</br>デザイン段階でページ全体のjpgを書き出して1/4の大きさにしてみるなど、ある程度見えを確認しながら作ったほうが実装後の修正が少なくスムーズです。</p>
+	</section>
+	<section>
+		<h2>[ 破線の処理 ]</h2>
+		<p>破線を画像にするとぼけやすいので、cssで表示させることが多い。</br>その際、デザインの複雑なところに破線が使われていると実装が大変なので、可能であれば薄い実線を使うなどで回避した方が無難。PCほど細かくスライスを切りすぎると、実装が大変なことがある。</p>
+	</section>
+	<section>
+		<h2>[ クラス名／ID名 ]</h2>
+		<p>クラス名やIDの付け方、セクショニングをPCとスマホである程度合わせておくと、別の人がさわっても修正するときわかりやすい。</p>
+	</section>
+	<section>
+		<h2>[scrollイベント ]</h2>
+		<p>スマホでは、スクロール中は下記のような処理が止まってしまいます。</p>
+		<ul class="box">
+			<li>＊ js…setTimeout、setInterval</li>
+			<li>＊ css…transition、animation</li>
+		</ul>
+		<p class="txt">また、jsのscrollイベントはスクロールが終わったタイミングでしか発生しないので、touchstart、touchmove、touchendなどのイベントも活用する。</p>
+	</section>
+	<section>
+		<h2>[ bodyの中の子要素などを、別個でスクロールさせる場合 ]</h2>
+		<p>iPhone、android共に、OSのバージョンによってスクロールの挙動が異なる。</p>
+		<ul class="box">
+			<li>＊ 比較的新しいOS…-webkit-overflow-scrolling: touch;で1本指で子要素のスクロール可能。</br>（バグが多めなのでiOS7、Android4より前のOSでは難しいかも知れません）</li>
+			<li>＊ 幅広く対応させるには、iScrollを( http://cubiq.org/iscroll-4 )</li>
+		</ul>
+		<p class="txt">=>とにかく動かない場合はjsのライブラリを使う！</p>
+	</section>
+	<section>
+		<h2>[ UI設計時の注意点 ]</h2>
+		<p>iOS7から、画面下部をタップすると、ツールバーが表示される仕様になりました。</br>そのため、ページ下部にベタ付きのフッターメニューなどを設けると、ボタンをタップしてもツールバーが表示されてしまい、うまくクリックできなかったりします。</br>デザイン段階で、そういったOSの仕様も考慮できると快適なUI設計ができそうです。</p>
+	</section>
+	<section>
+		<h2>[ フォームのチェックボックス ]</h2>
+		<p>iOS5ではlabelをクリックしてもcheckboxにチェックが入らないので、JSで解決してください。</p>
+	</section>
+</section><!--notes-->
+<section class="debug">
+	<h1>4: デバッグ</h1>
+	<p>スマホのコーディングをする際、使える便利なデバッグツールをまとめました。</p>
+	<section>
+		<h2>[ chromeのDevelop Tools ]</h2>
+		<ul>
+			<li>・user agentを切り替えることで、各OSの見えを確認できる。</li>
+			<li>・OSの解像度以外のサイズも、数値を入力すれば任意のサイズで表示を切り替えてくれる。</li>
+		</ul>
+		<p class="txt">※Develop Toolsの画面を閉じてリロードするとPC表示に戻ってしまうので気をつける。</p>
+		<figure><img src="img/chrome_developper_tool.jpg" height="" width="" alt="" /></figure>
+	</section>
+	<section>
+		<h2>[ Safariの開発メニュー ]</h2>
+		<ul>
+			<li>・safariの開発メニューでもuser agentの切り替えができる。</li>
+			<li>・実機をPCに接続し、実機のsafariの詳細設定でwebインスペクタをオンにすると、実機での表示を確認しながらソースを確認できる。</li>
+		</ul>
+		<div>
+			<h3>＊ iPhoneのSafariをPCに繋いで、インスペクタで調査できる</h3>
+			<p class="txt"><a href="http://c-brains.jp/blog/wsg/12/09/28-093305.php" target="_blank">http://c-brains.jp/blog/wsg/12/09/28-093305.php</a></p>
+		</div>
+		<figure><img src="img/safari_tool.jpg" height="" width="" alt="" /></figure>
+	</section>
+	<section>
+		<h2>[ XcodeのiOSシミュレータ ]</h2>
+		<p>XcodeのiOSシミュレータ + Safariのインスペクタで実機に近いの表示を確認しながらデバッグできる。</p>
+	</section>
+</section>
+
+<section class="useful_tool">
+<h1>便利ツール</h1>
+	<h2 class="subttl">[ IcoMoon ]</h2>
+	<p class="txt"><a href="http://icomoon.io/app/" target="_blank">http://icomoon.io/app/</a></p>
+	<p class="txt">サイト上で使う様々なアイコンを、フォントとしてエクスポートしてくれる。</p>
+</section>
+
+
+</body>
+</html>
+

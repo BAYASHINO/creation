@@ -1,0 +1,299 @@
+/*////////// common //////////*/
+
+* {
+	font-size: 16px;
+	color: #333;
+}
+
+body{
+	padding-bottom: 100px;
+}
+
+body > section{
+	margin-bottom:70px;
+}
+
+li{
+	list-style: none;
+	line-height: 24px;
+}
+
+/*////////// title //////////*/
+
+h1{
+	font-size: 22px;
+	font-weight: bold;
+	border-left: 6px solid #333;
+	padding:2px 0 2px 7px;
+}
+
+.subttl{
+	font-size: 16px;
+	line-height: 100%;
+}
+
+/*////////// title,text //////////*/
+
+h1{
+	font-size: 22px;
+	font-weight: bold;
+	border-left: 6px solid #333;
+	padding:2px 0 2px 7px;
+}
+
+.subttl{
+	font-size: 16px;
+	line-height: 100%;
+}
+
+.txt{
+	line-height: 24px;
+	margin-top: 10px;
+}
+
+/*////////// box //////////*/
+
+.box{
+	background: #EEEEEE;
+	padding: 20px;
+	margin-top: 10px;
+}
+
+.box > li{
+	font-weight: bold;
+	line-height: 24px;
+}
+
+
+
+/*////////// commentary //////////*/
+
+.commentary{
+	margin: 20px;
+}
+
+.commentary > .box_outline{
+	margin-top: 40px;
+}
+
+.commentary > .box_outline > ul{
+	margin-top: 10px;
+}
+
+.commentary > .box_outline > ul > li:first-child{
+	margin-top:0;
+}
+
+.commentary > .box_outline > ul + p{
+	margin-top: 10px;
+}
+
+/*////////// tips //////////*/
+.tips{
+	margin:80px 20px 20px 20px;
+}
+
+.tips > h1 + p{
+	margin-top:15px;
+	line-height: 24px;
+}
+
+.example > h2{
+	background:#000;
+	padding:7px 0 7px 10px;
+	color:#fff;
+}
+
+.example > h2 + p{
+	margin-top: 20px;
+	line-height: 24px;
+}
+
+.example > ul{
+	margin-top: 20px;
+}
+
+.example > ul > li{
+	margin-top: 10px;
+	line-height: 100%;
+}
+
+.example{
+	margin-top: 50px;
+}
+
+/* nav */
+
+.navi > nav{
+	margin: 20px 0;
+}
+
+.navi > nav > ul{
+	display: table;
+	width: 100%;
+}
+
+.navi > nav > ul > li{
+	display: table-cell;
+}
+
+.navi > nav > ul > .menu{background:#00a3cc;}
+.navi > nav > ul > .gallery{background:#b2cc00;}
+.navi > nav > ul > .contact{background:#cc0086;}
+
+.navi > nav > ul > li > a{
+	text-decoration: none;
+	display: block;
+	padding:20px 0;
+	text-align: center;
+	color: #fff;
+	font-weight: bold;
+}
+
+/* border-radius */
+
+.boxsizing > .sample_1{
+	margin:20px 0;
+	padding:20px;
+	width:100%;
+	border: 5px solid #00a3cc;
+	color:#00a3cc;
+	box-sizing:border-box;
+}
+
+
+/* border-radius */
+.rounded_corners > .sample_1{
+	width:130px;
+	margin: 20px 0;
+	text-align: center;
+}
+
+.rounded_corners > .sample_2{
+	width:130px;
+	margin: 20px 0;
+	text-align: center;
+}
+
+.rounded_corners a{
+	display:block;
+	padding:15px 0;	
+	text-decoration: none;
+}
+
+.rounded_corners > .sample_1{
+	border:3px solid #00a3cc;
+	border-radius: 5px;
+	color:#00a3cc;
+}
+
+.rounded_corners > .sample_2{
+	background: #00a3cc;
+	color:#fff;
+	border-radius: 100px;
+}
+
+.rounded_corners > .sample_3{
+	margin: 20px 0;
+	text-align: center;
+	width:100%;
+	border-radius: 5px;
+	background: #00a3cc;
+	color:#fff;
+	box-sizing: border-box;
+}
+
+/* box-shadow */
+
+.shadow > div{
+	width:200px;
+	height: 100px;
+	margin: 20px 0;
+}
+
+.shadow > .sample_1{
+	box-shadow: 3px 3px 10px 1px rgba(0,0,0,0.1);
+}
+
+.shadow > .sample_2{
+	box-shadow: 3px 3px 10px 1px rgba(4,137,130,0.5);
+}
+
+.shadow > .sample_3{
+	box-shadow: 3px 3px 10px 1px rgba(4,137,130,0.5) inset;
+}
+
+
+
+/*////////// notes //////////*/
+.notes{
+	margin:80px 20px 20px 20px;
+}
+
+.notes > section{
+	margin-top: 30px;
+}
+
+.notes > section > h2{
+	margin-top: 15px;
+}
+
+.notes > section > h2 + p{
+	margin-top: 10px;
+	line-height: 24px;
+}
+
+.notes > section > p + p{
+	background: #EEEEEE;
+	padding: 100px 0;
+	text-align: center;
+	margin-top: 10px;
+}
+
+
+/*////////// debug //////////*/
+.debug{
+	margin:100px 20px 0 20px;
+}
+
+.debug > section{
+	margin-top: 30px;
+}
+
+.debug > h1 + p {
+	margin-top: 15px;
+	}
+
+.debug > section > h2{
+	margin-top: 15px;
+}
+
+.debug > section > h2 + p{
+	margin-top: 10px;
+	line-height: 24px;
+}
+
+.debug > section > p + p{
+	background: #EEEEEE;
+	padding: 100px 0;
+	text-align: center;
+	margin-top: 10px;
+}
+
+.debug > section > div{
+	margin-top: 20px;
+}
+
+.debug > section > div > p{
+	margin-top: 5px;
+}
+
+
+
+/*////////// useful tool //////////*/
+.useful_tool{
+	margin:80px 20px 0 20px;
+}
+.useful_tool > h2{
+	margin-top: 15px;
+}
