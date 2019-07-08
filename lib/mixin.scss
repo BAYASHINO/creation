@@ -1,0 +1,126 @@
+v/* ================================================
+
+   mixin common
+
+   ================================================ */
+
+/* ---------------------
+  clearfix
+  --------------------- */
+  // @include clearfix;
+  @mixin clearfix {
+    *zoom: 1;
+
+    &:after {
+      display: table;
+      clear: both;
+      content: '';
+    }
+  }
+
+
+/* ---------------------
+   font-size
+   --------------------- */
+  // @include font-size(16);
+  @mixin font-size($size, $base: 16) {
+    font-size: $size + px;
+    font-size: $size / $base + rem;
+    letter-spacing: .25em;
+  }
+
+
+/* ---------------------
+   center
+   --------------------- */
+   // @include center;
+  @mixin center {
+    margin: 0 auto;
+    max-width: 980px;
+  }
+
+
+/* ---------------------
+  center
+  --------------------- */
+  // @include link-color(#000000);
+  @mixin link-color($color) {
+    color: $color;
+
+    &:active,
+    &:focus,
+    &:hover {
+      color: lighten($color, 20%);
+    }
+  }
+
+
+/* ---------------------
+   position
+   --------------------- */
+  // @include absolute-top-left(20px, 30px);
+  // @include absolute-top-left(10%, 50%);
+  @mixin absolute-top-left($top: 0, $left: 0) {
+    position: absolute;
+    top: $top + px;
+    left: $left + px;
+  }
+
+  @mixin absolute-top-right($top: 0, $right: 0) {
+    position: absolute;
+    top: $top + px;
+    right: $right + px;
+  }
+
+  @mixin absolute-bottom-left($bottom: 0, $left: 0) {
+    position: absolute;
+    bottom: $bottom + px;
+    left: $left + px;
+  }
+
+  @mixin absolute-bottom-right($bottom: 0, $right: 0) {
+    position: absolute;
+    right: $right + px;
+    bottom: $bottom + px;
+  }
+
+
+/* ---------------------
+   border-radius
+   --------------------- */
+  // @include border-radius(10);
+  // @include border-radius-per(100%);
+  @mixin border-radius($radius) {
+    -webkit-border-radius: $radius + px;
+    -moz-border-radius: $radius + px;
+    border-radius: $radius + px;
+  }
+
+  @mixin border-radius-per($radius) {
+    -webkit-border-radius: $radius;
+    -moz-border-radius: $radius;
+    border-radius: $radius;
+  }
+
+
+/* ---------------------
+     box-shadow
+  --------------------- */
+  // @include box-shadow(10px, 10px, 0px, 0px, #000);
+  @mixin box-shadow($horizontal: 10px, $vertical: 10px, $blur: 0, $shadow: 0, $color: #000) {
+    -webkit-box-shadow: $horizontal $vertical $blur $shadow $color;
+    -moz-box-shadow: $horizontal $vertical $blur $shadow $color;
+    box-shadow: $horizontal $vertical $blur $shadow $color;
+  }
+
+
+/* ---------------------
+     opacity
+    --------------------- */
+  // @include opacity(.7);
+  @mixin opacity($opacity) {
+    opacity: $opacity;
+    // IE8 filter
+    $opacity-ie: $opacity * 100;
+    filter: alpha(opacity = $opacity-ie);
+  }

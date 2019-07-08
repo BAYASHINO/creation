@@ -1,0 +1,272 @@
+
+/* ================================================================================================
+
+   html
+
+   ================================================================================================ */
+
+
+
+/* ---------------------
+  base
+  --------------------- */
+
+  html{
+    font-family: 游ゴシック体, "Yu Gothic", YuGothic, "ヒラギノ角ゴ Pro", "Hiragino Kaku Gothic Pro", メイリオ, Meiryo, sans-serif;
+    font-size: .95rem;
+    line-height: 1.65;
+    color: rgb(51, 51, 51);
+    a {
+      color: #3498db;
+      text-decoration: underline;
+    }
+  }
+
+  @mixin center {
+    margin: 0 auto;
+    max-width: 810px;
+  }
+
+  .content{
+    @include center;
+    h1{
+      font-size: 26px;
+      border-bottom: dotted 1px #999;
+      padding: 10px 0 15px 0;
+      margin-top: 6v0px;
+      margin-bottom: 25px;
+
+      span{
+        font-size: 17px;
+        padding-left: 15px;
+      }
+    }
+    ol{
+      li{
+        padding-bottom: 5px;
+      }
+    }
+    .top{
+      padding-top: 20px
+    }
+  }
+
+
+
+/* ---------------------
+   header
+   --------------------- */
+
+
+
+   /*-----------------------------------------------------
+   base
+   -------------------------------------------------------*/
+
+   body {
+     background-color: #FFF;
+     font-family: "ヒラギノ角ゴ ProN W3";
+     color: #323232;
+     background-color: #f9f9f9;
+   }
+
+
+   img{
+     max-width: 100%;
+     height: auto;
+   }
+
+
+   dd {
+     font-size: 15px;
+   }
+
+   *::-moz-selection {
+     background: rgba(33, 33, 33, 0.15);
+     opacity: 0.3;
+   }
+
+   *::selection {
+     background: rgba(33, 33, 33, 0.15);
+     opacity: 0.3; }
+
+   #l-sentenceconstruction {
+     padding-top: 70px;
+     padding-bottom: 70px;
+   }
+
+   #l-styleguide, #l-directory, #l-imgfile, #l-js, #l-editor, #l-validation {
+     padding-top: 70px; }
+
+   /* --------------------------------------------------
+   heading
+   -------------------------------------------------- */
+   .h-heading {
+     font-size: 1.1em;
+     margin-top: 13px;
+     color: #ffffff;
+     text-align: center;
+     font-weight: normal; }
+
+   .sub-title {
+     font-weight: bold;
+     font-size: 30px;
+     padding-bottom: 10px;
+     margin-bottom: 25px;
+     border-bottom: 2px solid #e5e5e5;
+     color: #363636; }
+
+
+
+
+     .wrapper {
+      height: 300px;
+    }
+
+    .nopadding {
+      padding: 0;
+    }
+
+    .inner {
+      padding-top: 80px;
+      padding-bottom: 70px;
+    }
+
+
+    /* ==========================================================================
+    Hero
+    ========================================================================== */
+    .hero {
+      background: url(../img/hero-bg.jpg) no-repeat center center;
+      -webkit-background-size: cover;
+      -moz-background-size: cover;
+      -o-background-size: cover;
+      background-size: cover;
+      height: auto;
+    }
+
+    .hero h1 {
+      height: auto;
+      font-size: 32px;
+      letter-spacing: 12px;
+      margin: 5px;
+      color: #FFFFFF;
+      text-align: center;
+    }
+
+    .hero h1 span {
+      color: #a1a9b0;
+      display: inline-block;
+    }
+
+    .hero p {
+      letter-spacing: 1px;
+      text-align: center;
+      padding: 0 10px;
+      font-size: 12px;
+    }
+
+    .learn-more-btn {
+      background: rgba(61,201,179,1);
+      padding: 20px 40px;
+      border-radius: 5px;
+      -moz-border-radius: 5px;
+      -webkit-border-radius: 5px;
+      -o-border-radius: 5px;
+      color: #fff;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      display: inline-block;
+      -webkit-box-shadow: 0 3px 0 0 #309383;
+      -moz-box-shadow: 0 3px 0 0 #309383;
+      box-shadow: 0 3px 0 0 #309383;
+      margin: 60px 0 0;
+      font-weight: 700;
+    }
+
+    .learn-more-btn:hover,.learn-more-btn:focus {
+      background: rgba(61,201,179,0.6);
+      color: #fff;
+    }
+
+
+   /*-----------------------------------------------------
+   contents
+   -------------------------------------------------------*/
+   .contects-headline {
+     font-size: 15px;
+     font-weight: bold;
+     color: #323232;
+     margin-bottom: 10px; }
+
+   .txt {
+     font-size: 15px;
+     line-height: 1.5em;
+     margin-bottom: 30px; }
+
+   .txt-02 {
+     font-size: 15px;
+     line-height: 1.5em;
+     margin-bottom: 10px; }
+
+   .txt-03 {
+     font-size: 15px;
+     line-height: 1.5em;
+     margin-bottom: 10px; }
+
+   .wrapper {
+     max-width: 960px;
+     height: auto;
+     margin: 0px auto;
+     text-align: justify;
+     clear: both; }
+
+   .container {
+     max-width: 960px;
+     margin: 0px auto;
+     padding: 0 25px;
+
+    }
+
+   /*-----------------------------------------------------
+   l-principles
+   -------------------------------------------------------*/
+   #l-principles {
+     background-color: #fff;
+     width: 100%;
+     height: auto;
+     border: 1px solid #e5e5e5;
+     margin-top: 70px;
+     }
+
+     #l-principles{
+       padding: 5%;
+     }
+
+     .pri-wrapper{
+       max-width: 90%;
+       margin: 0 auto;
+     }
+
+     .pri-title {
+       text-align: center;
+       font-size: 30px;
+       margin-bottom: 35px;
+       border: none;
+       color: #343333;
+       padding-bottom: 10px;
+      }
+
+     #l-principles .pri-txt {
+       font-size: 15px;
+       font-weight: bold;
+       line-height: 25px;
+       padding-bottom: 30px;
+       width: 70%;
+       margin: 0px auto;
+
+     }
+
+   .pritxt{
+     color: #DDDDDD;
+     }
